@@ -3,9 +3,7 @@ name: 🎨 Deploy React Frontend to cPanel
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:    # Allow manual deployment
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -19,8 +17,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: frontend/package-lock.json
 
     - name: 📦 Install dependencies
       run: npm install
@@ -32,11 +28,6 @@ jobs:
       env:
         CI: false
         REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
-        REACT_APP_APP_NAME: ${{ secrets.REACT_APP_APP_NAME }}
-        REACT_APP_COMPANY_NAME: ${{ secrets.REACT_APP_COMPANY_NAME }}
-        REACT_APP_ADDRESS: ${{ secrets.REACT_APP_ADDRESS }}
-        REACT_APP_PHONE: ${{ secrets.REACT_APP_PHONE }}
-        REACT_APP_EMAIL: ${{ secrets.REACT_APP_EMAIL }}
 
     - name: 📁 Verify build files
       run: |
@@ -51,8 +42,8 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./frontend/build/
-        server-dir: /public_html/    # ← ADD SLASH AT START
-        dangerous-clean-slate: true    # ⚠️ This will DELETE your current under-construction page!
+        server-dir: /public_html/    # ← FIXED PATH
+        dangerous-clean-slate: true
         exclude: |
           **/.git*
           **/.git*/**
@@ -61,4 +52,4 @@ jobs:
     - name: ✅ Deployment Success
       run: |
         echo "🎉 Frontend successfully deployed to cPanel!"
-        echo "🌐 Your React app is now live at: https://azholidays.com"
+        echo "🌐 Your React app is now live at: https://azholidays.com.sg"
