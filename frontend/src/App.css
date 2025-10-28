@@ -9,10 +9,18 @@ body {
   background: linear-gradient(135deg, #1a2a6c, #2c5aa0, #3a7bd5);
   color: white;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  overflow-x: hidden;
 }
 
 .App {
   text-align: center;
+  width: 100%;
 }
 
 .App-header {
@@ -24,11 +32,38 @@ body {
   padding: 20px;
 }
 
+.container {
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container {
+  margin-bottom: 30px;
+}
+
+.logo {
+  max-width: 180px;
+  height: auto;
+}
+
 h1 {
   font-size: 2.8rem;
   margin-bottom: 15px;
   font-weight: 700;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #e0e0e0;
 }
 
 .address {
@@ -37,14 +72,29 @@ h1 {
   color: #c0c0ff;
 }
 
-.welcome-message {
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   margin: 40px 0;
+  flex-wrap: wrap;
 }
 
-.welcome-message h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  font-weight: 500;
+.countdown-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+.countdown-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.countdown-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
 .contact-info {
@@ -63,7 +113,38 @@ h1 {
     font-size: 2.2rem;
   }
   
-  .welcome-message h2 {
+  h2 {
     font-size: 1.5rem;
+  }
+  
+  .container {
+    padding: 30px 20px;
+  }
+  
+  .countdown {
+    gap: 10px;
+  }
+  
+  .countdown-item {
+    min-width: 70px;
+    padding: 12px;
+  }
+  
+  .countdown-value {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  .address {
+    font-size: 1rem;
   }
 }
