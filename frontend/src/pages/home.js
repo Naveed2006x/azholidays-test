@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar.js';
-import Footer from '../components/Footer';
 import './home.css';
 import banner from '../Images/banner.jpg'
 import cablecar from '../Images/cablecar.jpg'
@@ -79,7 +77,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Navbar />
       
       {/* Countdown Card - Top Right */}
       <div className="countdown-card">
@@ -175,8 +172,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
