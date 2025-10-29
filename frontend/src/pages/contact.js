@@ -29,8 +29,7 @@ const Contact = () => {
     const [openSnackbar, setOpenSnackbar] = useState(false);
 
     const GOOGLE_MAPS_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-    console.log('API Key:', GOOGLE_MAPS_API_KEY); // This should now show your key
-    
+
     const officeLocation = {
         lat: 1.305561670313934,
         lng: 103.85288109551813
