@@ -42,7 +42,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./frontend/build/
-        server-dir: ./public_html/    # ← RELATIVE PATH from FTP root
+        server-dir: ./public_html/
         dangerous-clean-slate: true
         exclude: |
           **/.git*
